@@ -13,6 +13,8 @@ builder.Services.AddSingleton<IMeritOrderService, MeritOrderService>();
 builder.Services.AddSingleton<ISwitchPowerplantService, SwitchPowerplantService>();
 builder.Services.AddSingleton<IPowerplantCostService, PowerplantCostService>();
 
+builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8080));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

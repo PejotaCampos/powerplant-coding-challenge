@@ -26,7 +26,11 @@ namespace PowerPlantChallenge.Services
         {
             List<EnergyResponse> response = new();
 
-            foreach (var powerplant in powerplants)
+            var powerplantsOrdered = powerplants.OrderByDescending(p => p.Efficiency)
+                .ThenBy(p=>p.Name)
+                .ToArray();
+
+            foreach (var powerplant in powerplantsOrdered)
             {
                 response.Add(new(){ Name = powerplant.Name, Energy = Math.Round(powerplant.PowerLoaded, 1) } );
             }
