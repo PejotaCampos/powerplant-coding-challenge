@@ -13,7 +13,7 @@ builder.Services.AddSingleton<IMeritOrderService, MeritOrderService>();
 builder.Services.AddSingleton<ISwitchPowerplantService, SwitchPowerplantService>();
 builder.Services.AddSingleton<IPowerplantCostService, PowerplantCostService>();
 
-builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8080)); //For docker
+builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8888)); //For docker
 
 var app = builder.Build();
 
