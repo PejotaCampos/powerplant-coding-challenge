@@ -32,6 +32,10 @@ If you want, you could pull the image using DockerHub (https://www.docker.com/pr
 
 This way it's recommended in a Windows machine.
 
+Pre-requisite:
+
+- Have .net 8.0.0 or latter installed on the machine.
+
 On this repository you will find the folder /ManualExe/.
 You could just double click on the file PowerPlantChallenge.exe and run it as a administrator; this will trigger a prompt and the app should be running on the port 8888.
 
