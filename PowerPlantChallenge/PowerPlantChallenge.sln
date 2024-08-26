@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerPlantChallenge", "PowerPlantChallenge\PowerPlantChallenge.csproj", "{80DB0560-5CAD-473E-9B98-1BA42902EF1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerPlantChallenge", "PowerPlantChallenge\PowerPlantChallenge.csproj", "{80DB0560-5CAD-473E-9B98-1BA42902EF1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Tests", "..\Tests\Services.Tests\Services.Tests.csproj", "{9B7FE9BA-5489-4F38-9CFA-CC8EFB1AE069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{80DB0560-5CAD-473E-9B98-1BA42902EF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80DB0560-5CAD-473E-9B98-1BA42902EF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80DB0560-5CAD-473E-9B98-1BA42902EF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7FE9BA-5489-4F38-9CFA-CC8EFB1AE069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7FE9BA-5489-4F38-9CFA-CC8EFB1AE069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7FE9BA-5489-4F38-9CFA-CC8EFB1AE069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7FE9BA-5489-4F38-9CFA-CC8EFB1AE069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

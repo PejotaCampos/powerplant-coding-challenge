@@ -68,7 +68,6 @@ namespace PowerPlantChallenge.Services
             {
                 if(load < powerplant.PowerMin)
                 {
-                    //TODO
                     var powerplantsWhichStillOff = powerplants.Where(p => !p.IsOn).ToList();
                     var bestPowerplantCost = powerPlantCostService.VerifyBestCost(powerplantsWhichStillOff, fuels, load);
 
@@ -94,7 +93,6 @@ namespace PowerPlantChallenge.Services
             }
 
             return powerplants;
-            throw new NotImplementedException();
         }
     }
 }
