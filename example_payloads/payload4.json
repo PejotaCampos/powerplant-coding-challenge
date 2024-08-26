@@ -1,0 +1,26 @@
+[
+    {
+        "name": "windpark1",
+        "energy": 0
+    },
+    {
+        "name": "windpark2",
+        "energy": 0
+    },
+    {
+        "name": "gasfiredbig1",
+        "energy": 460
+    },
+    {
+        "name": "gasfiredbig2",
+        "energy": 0
+    },
+    {
+        "name": "gasfiredsomewhatsmaller",
+        "energy": 0
+    },
+    {
+        "name": "tj1",
+        "energy": 10
+    }
+]
