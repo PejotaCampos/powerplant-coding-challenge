@@ -13,16 +13,16 @@ builder.Services.AddSingleton<IMeritOrderService, MeritOrderService>();
 builder.Services.AddSingleton<ISwitchPowerplantService, SwitchPowerplantService>();
 builder.Services.AddSingleton<IPowerplantCostService, PowerplantCostService>();
 
-builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8080));
+builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8080)); //For docker
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 

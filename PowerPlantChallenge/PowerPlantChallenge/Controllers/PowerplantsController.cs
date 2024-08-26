@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PowerPlantChallenge.Models;
 using PowerPlantChallenge.Services;
@@ -18,10 +19,25 @@ namespace PowerPlantChallenge.Controllers
             _meritOrderService = meritOrderService;
         }
 
-        [HttpPost(Name = "GetWeatherForecast")]
-        public IEnumerable<EnergyResponse> Get(EnergyRequest request)
+        [HttpPost]
+        public IActionResult Get(EnergyRequest request)
         {
-            return _meritOrderService.SwitchPowerplants(request);
+            try
+            {
+                var powerplantsOn = _meritOrderService.SwitchPowerplants(request);
+
+                var energyLoaded = powerplantsOn.Sum(p => p.Energy);
+
+                if (request.Load > energyLoaded)
+                    return BadRequest($"No enough powerplants to supply this load. The max energy generated is {energyLoaded}");
+
+                return Ok(powerplantsOn);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Error on switch powerplants process {erro}", e);
+                return StatusCode(500);
+            }
         }
     }
 }
