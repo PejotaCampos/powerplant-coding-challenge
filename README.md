@@ -45,6 +45,15 @@ Then you could call the endpoint http://localhost:8888/Powerplants
 
 ## Project details
 
+### Folders
+- ManualExe: Folder which contain the files needed to run the api locally
+
+- PowerPlantChallenge: Folder that contain the dotnet solution, controller, domain, models and services classes
+
+- Tests: xUnit tests project.
+
+- example_payloads: Payload used by test the api
+
 ### Services
 - MeritOrderService: Service which brings the powerplants turned on, based on the request. It should be the service used by the controller. This is the only service that doesn't have unit tests,
 	this was done because it almost fully tested by postman, since it is directly called by the controller.
