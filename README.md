@@ -9,14 +9,15 @@ There are two options to run it, using Docker (recommended) or running the .exe 
 
 ## How to run
 
-### Running by docker 
+### Running by docker (recommended)
 Pre-requisites: 
 
 - DockerDesktop installed
 - DockerHub account (optional)
 
-First of all, run you DockerDesktop to initialize the docker services in your local machine.
-Run the commands below on the powershell or cmd.exe
+First of all, run you DockerDesktop to initialize the docker services in your local machine. Usually it's in "C:\Program Files\Docker\Docker", then it's just run Docker Desktop.exe
+
+With your dokcer running, run the commands below on the powershell or cmd.exe
 
 1 - docker pull pejotacampos/powerapichallenge
 
