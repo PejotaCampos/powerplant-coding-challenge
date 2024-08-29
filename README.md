@@ -9,14 +9,15 @@ There are two options to run it, using Docker (recommended) or running the .exe 
 
 ## How to run
 
-### Running by docker 
+### Running by docker (recommended)
 Pre-requisites: 
 
 - DockerDesktop installed
 - DockerHub account (optional)
 
-First of all, run you DockerDesktop to initialize the docker services in your local machine.
-Run the commands below on the powershell or cmd.exe
+First of all, run you DockerDesktop to initialize the docker services in your local machine. Usually it's in "C:\Program Files\Docker\Docker", then it's just run Docker Desktop.exe
+
+With your dokcer running, run the commands below on the powershell or cmd.exe
 
 1 - docker pull pejotacampos/powerapichallenge
 
@@ -43,6 +44,15 @@ Then you could call the endpoint http://localhost:8888/Powerplants
 
 
 ## Project details
+
+### Folders
+- ManualExe: Folder which contain the files needed to run the api locally
+
+- PowerPlantChallenge: Folder that contain the dotnet solution, controller, domain, models and services classes
+
+- Tests: xUnit tests project.
+
+- example_payloads: Payload used by test the api
 
 ### Services
 - MeritOrderService: Service which brings the powerplants turned on, based on the request. It should be the service used by the controller. This is the only service that doesn't have unit tests,
