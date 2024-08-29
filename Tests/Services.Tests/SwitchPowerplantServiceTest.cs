@@ -12,27 +12,6 @@ namespace Services.Tests
     public class SwitchPowerplantServiceTest
     {
         [Fact]
-        public void TestReturnResponse()
-        {
-            IPowerplantCostService powerplantCostService = Substitute.For<IPowerplantCostService>();
-
-            SwitchPowerplantService switchPowerplantService = new(powerplantCostService);
-
-            var powerplants = GenerateMocks.GetAllPowerplants();
-
-            foreach (var powerplant in powerplants)
-            {
-                powerplant.IsOn = true;
-                powerplant.PowerLoaded = powerplant.PowerMax;
-            }
-
-            var response = switchPowerplantService.GetResponse(powerplants);
-
-            Assert.Equal(6, response.Count());
-            Assert.Equal(1332, response.Sum(r => r.Energy));
-        }
-
-        [Fact]
         public void TestEnergyLoaded()
         {
             IPowerplantCostService powerplantCostService = Substitute.For<IPowerplantCostService>();

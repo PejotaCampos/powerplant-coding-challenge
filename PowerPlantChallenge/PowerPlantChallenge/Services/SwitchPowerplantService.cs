@@ -9,8 +9,6 @@ namespace PowerPlantChallenge.Services
         public IEnumerable<Powerplant> TurnOnByCost(IEnumerable<Powerplant> powerplants, Fuels fuels, double load);
 
         public double EnergyLoaded(IEnumerable<Powerplant> powerplants);
-
-        public IEnumerable<EnergyResponse> GetResponse(IEnumerable<Powerplant> powerplants);
     }
 
     public class SwitchPowerplantService(IPowerplantCostService powerplantCostService) : ISwitchPowerplantService
@@ -20,23 +18,6 @@ namespace PowerPlantChallenge.Services
         private readonly IPowerplantCostService powerPlantCostService = powerplantCostService;
 
         public double EnergyLoaded(IEnumerable<Powerplant> powerplants) => powerplants.Sum(p => p.PowerLoaded);
-        
-
-        public IEnumerable<EnergyResponse> GetResponse(IEnumerable<Powerplant> powerplants)
-        {
-            List<EnergyResponse> response = new();
-
-            var powerplantsOrdered = powerplants.OrderByDescending(p => p.Efficiency)
-                .ThenBy(p=>p.Name)
-                .ToArray();
-
-            foreach (var powerplant in powerplantsOrdered)
-            {
-                response.Add(new(){ Name = powerplant.Name, Energy = Math.Round(powerplant.PowerLoaded, 1) } );
-            }
-
-            return response;
-        }
 
         public IEnumerable<Powerplant> TurnOnFuelsNoCost(IEnumerable<Powerplant> powerplants, double wind)
         {

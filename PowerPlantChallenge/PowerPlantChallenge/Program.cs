@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IMeritOrderService, MeritOrderService>();
 builder.Services.AddSingleton<ISwitchPowerplantService, SwitchPowerplantService>();
 builder.Services.AddSingleton<IPowerplantCostService, PowerplantCostService>();
+builder.Services.AddSingleton<IPowerplantResponseService, PowerplantResponseService>();
 
 builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(8888)); //For docker
 

@@ -7,9 +7,11 @@ namespace PowerPlantChallenge.Services
         public IEnumerable<EnergyResponse> SwitchPowerplants(EnergyRequest request);
     }
 
-    public class MeritOrderService(ISwitchPowerplantService switchPowerplantService) : IMeritOrderService
+    public class MeritOrderService(ISwitchPowerplantService switchPowerplantService, IPowerplantResponseService powerplantResponseService) : IMeritOrderService
     {
         private readonly ISwitchPowerplantService switchPowerplantService = switchPowerplantService;
+
+        private readonly IPowerplantResponseService powerplantResponseService = powerplantResponseService;
 
         public IEnumerable<EnergyResponse> SwitchPowerplants(EnergyRequest request)
         {
@@ -20,11 +22,11 @@ namespace PowerPlantChallenge.Services
             var energyNeeded = request.Load - energyLoaded;
 
             if (energyNeeded <= 0)
-                return switchPowerplantService.GetResponse(noCostPowerOn);
+                return powerplantResponseService.GetResponse(noCostPowerOn);
 
             var powerplantsTurnOn = switchPowerplantService.TurnOnByCost(noCostPowerOn, request.Fuels, energyNeeded);
 
-            return switchPowerplantService.GetResponse(powerplantsTurnOn);
+            return powerplantResponseService.GetResponse(powerplantsTurnOn);
         }
     }
 }
