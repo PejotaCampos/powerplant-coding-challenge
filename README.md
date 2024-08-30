@@ -61,3 +61,6 @@ Then you could call the endpoint http://localhost:8888/Powerplants
 - SwitchPowerplantService: Service which turnsOn the powerplants based on the type of the power. Could inform the amout of power which is already load.
 
 - PowerplantCostService: Service that given a remain load, check what is the best cost-benefit powerplant to turn on.
+
+- PowerplantResponseService: Service that given a powerplant list, will transform it in a properly response for the endpoit. It was created, because in case any client wants to receive more information on the response
+it will be just implement/extend the interface IPowerplantResponseService and build the response as they want.
